@@ -1,7 +1,17 @@
 import './App.css';
 import { Component } from 'react';
+import { SearchResults } from './SearchResults/SearchResults'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchResults: [{ name: 'name1', artist: 'artist1', album: 'album1' },
+        { name: 'name1', artist: 'artist1', album: 'album1' },
+        { name: 'name1', artist: 'artist1', album: 'album1' }],
+    };
+  }
   render() {
     return (
       <div className='App'>
@@ -11,6 +21,9 @@ class App extends Component {
           <div className="App-playlist">
             {/* <!-- Add a SearchResults component -->
             <!-- Add a Playlist component --> */}
+            <SearchResults searchResults={this.state.searchResults}>
+
+            </SearchResults>
           </div>
         </div>
       </div>
